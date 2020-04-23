@@ -1,0 +1,52 @@
+﻿@using BlogPessoal.Web.Models
+
+@model IEnumerable<Autor>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Autor</h2>
+
+<div>
+    @Html.ActionLink("Adicionar novo", "Create")
+</div>
+
+<table class="table">
+
+    <tr>
+        <th>
+            Nome
+        </th>
+        <th>
+            Email
+        </th>
+        <th>
+            Senha
+        </th>
+        <th>
+            Administrador
+        </th>
+        <th>
+            Data Cadastro
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>@item.Nome</td>
+        <td>@item.Email</td>
+        <td>@item.Senha</td>
+        <td>@item.Administrador</td>
+        <td>@item.DataCadastro</td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id = item.Id })
+            @Html.ActionLink("Excluir", "Delete", new { id = item.Id })
+        </td>
+    </tr>
+    }
+
+</table>
+
+

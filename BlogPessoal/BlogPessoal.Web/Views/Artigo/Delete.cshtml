@@ -1,0 +1,75 @@
+﻿@using BlogPessoal.Web.Models
+
+@model Artigo
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Excluir Artigo</h2>
+
+<h3>Você tem certeza que deseja remover este artigo?</h3>
+<div>
+    <h4>Autor</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Titulo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Titulo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Conteudo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Conteudo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataPublicacao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataPublicacao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CategoriaArtigoId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CategoriaArtigoId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AutorId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AutorId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Removido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Removido)
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Voltar para lista", "Index")
+        </div>
+    }
+</div>
+
+
+

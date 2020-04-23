@@ -1,0 +1,63 @@
+﻿@using BlogPessoal.Web.Models
+
+@model Autor
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Editar Autor</h2>
+
+@using (Html.BeginForm())
+{
+<div>
+    @Html.ValidationSummary(true, "Problemas encontrados.", new { @class = "text-danger" })
+    @Html.HiddenFor(t => t.Id)
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Nome)
+        <div>
+            @Html.EditorFor(model => model.Nome)
+            @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Email)
+        <div>
+            @*@Html.TextAreaFor(model => model.Email)*@
+            @Html.EditorFor(model => model.Email)
+            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Senha)
+        <div>
+            @Html.EditorFor(model => model.Senha)
+            @Html.ValidationMessageFor(model => model.Senha, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Administrador)
+        <div>
+            @Html.EditorFor(model => model.Administrador)
+            @Html.ValidationMessageFor(model => model.Administrador, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.DataCadastro)
+        <div>
+            @Html.EditorFor(model => model.DataCadastro)
+            @Html.ValidationMessageFor(model => model.DataCadastro, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Edit" class="btn btn-default" />
+    </div>
+</div>
+}
+
